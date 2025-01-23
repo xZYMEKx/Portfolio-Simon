@@ -1,0 +1,130 @@
+
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    background-color: #D3D3D3;
+}
+header {
+    background-color: #333;
+    box-shadow: 0 4px 30px #396471;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+footer {
+    background-color: #333;
+    box-shadow: 0 -4px 30px #396471;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1920px;
+    margin: 10 auto;
+    margin-bottom: 0px;
+    margin-top: 15px;
+} 
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1920px;
+    margin: 10 auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}   
+.container3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1920px;
+    margin: 10 auto;
+    margin-bottom: 15px;
+    margin-top: 0px;
+}                           
+.box {
+    background-color: #333;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 30%;
+    box-shadow: 0 4px 30px #396471;
+    transition: transform 0.3s ease;
+    color: white;
+    text-align: center;       
+}
+.box2 {
+    background-color: #333;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 30%;
+    box-shadow: 0 4px 30px #396471;
+    transition: transform 0.3s ease;
+    color: white;
+    text-align: center;       
+}
+.box3 {
+    background-color: #333;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 20%;
+    box-shadow: 0 4px 30px #396471;
+    transition: transform 0.3s ease;
+    color: white;
+    text-align: center;       
+}
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px #ffffff80;
+    background-color: #396471; 
+    transition: background-color 0.3s ease; 
+}
+.box2:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 16px #ffffff80;
+    background-color: #396471; 
+    transition: background-color 0.3s ease; 
+}
+.box3:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px #ffffff80;
+    background-color: #396471; 
+    transition: background-color 0.3s ease; 
+}
+
+
+
+
+.lewo {
+    color: #ffffff; 
+    font-size: 17px;
+    text-align: left;
+    margin-bottom: 1px;
+}
+.prawo {
+    color: #ffffff; 
+    font-size: 17px;
+    text-align: right;
+    margin-bottom: 1px;
+}
+.srodek {
+    color: #ffffff; 
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 1px;
+}
+.wysrodkowanie {
+    color: #ffffff; 
+    font-size: 17px;
+    text-align: justify;
+    margin-bottom: 1px;
+}
