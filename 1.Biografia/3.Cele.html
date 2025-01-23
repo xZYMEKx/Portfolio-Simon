@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Cele</title>
+<link rel="website icon"  type="jpg"  href="z.Profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="3.Cele.css">
+</head>
+
+
+
+<body>
+    <div class="Strona">
+
+        <div class="widok">
+
+
+            <div class="header-fit">
+                <div class="header">
+
+                    <div class="Logo">
+                        <div class="Logo-tresc">
+                        Simon<span class="neon-text">.</span>
+                        </div>
+                    </div>
+
+
+                    <div class="Nawigacja">
+                        <nav>
+                            <ul class="nav-links">
+                                <li><a href="/index.html">Strona Główna</a></li>
+                                <li><a href="2.Projekty.html">Projekty</a></li>
+                                <li><a href="3.Cele.html">Cele</a></li>
+                                <li><a href="4.Kontakt.html">Kontakt</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="tabela-fit">
+                <div class="wzor">
+
+
+                    <div class="opis-ramka">
+
+                        <table class="opis" data-expanded-width="calc(70vw + 2rem)">
+                            <tr>
+                                <td class="opis-t" style="text-align: center;">Średnia ocen 6.0 w 8 klasie</td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+
+
+                    <div class="tabela-ramka">
+                        <table class="tabela">
+
+                            <tr class="rzad" style="height: 33%;">
+                                <td class="komorka" style="text-align: center;">2</td>
+                                <td class="komorka" style="text-align: center;">3</td>
+                            </tr>
+
+                            <tr class="rzad" style="height: 34%;">
+                                <td class="komorka" style="text-align: center;">4</td>
+                                <td class="komorka" style="text-align: center;">5</td>
+                            </tr>
+
+                            <tr class="rzad" style="height: 33%;">
+                                <td class="komorka" style="text-align: center;">6</td>
+                                <td class="komorka" style="text-align: center;">7</td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const komorki = document.querySelectorAll('.komorka');
+    komorki.forEach(komorka => {
+        komorka.addEventListener('click', () => {
+            if (komorka.classList.contains('expanded')) {
+                komorka.classList.remove('expanded');
+            } else {
+                document.querySelectorAll('.komorka.expanded').forEach(expandedKomorka => {
+                    expandedKomorka.classList.remove('expanded');
+                });
+                komorka.classList.add('expanded');
+            }
+        });
+    });
+
+
+    const expandableDivs = document.querySelectorAll(".opis");
+    const tabelaRamka = document.querySelector(".tabela-ramka");
+    const originalTabelaRamkaStyle = tabelaRamka ? tabelaRamka.style.cssText : "";
+    expandableDivs.forEach(div => {
+        div.style.position = "relative";
+        div.addEventListener("click", function () {
+            const isExpanded = div.classList.contains("expanded");
+            expandableDivs.forEach(otherDiv => {
+                if (otherDiv !== div) {
+                    otherDiv.classList.remove("expanded");
+                    otherDiv.style.width = "";
+                    otherDiv.style.left = "";
+                    const opisT = otherDiv.querySelector('.opis-t');
+                    if (opisT) {
+                        opisT.classList.remove('expanded');
+                    }
+                }
+            });
+
+            if (!isExpanded) {
+                const expandedWidth = div.getAttribute('data-expanded-width');
+                div.style.width = expandedWidth; 
+                div.style.left = "0";
+            } else {
+                div.style.width = ""; 
+                div.style.left = ""; 
+            }
+
+     
+            div.classList.toggle("expanded");
+            div.parentElement.classList.toggle("expanded");
+            const opisT = div.querySelector('.opis-t');
+            if (opisT) {
+                opisT.classList.toggle('expanded');
+            }
+
+            if (tabelaRamka) {
+                if (isExpanded) {
+                    tabelaRamka.style.cssText = originalTabelaRamkaStyle; 
+                } else {
+                    tabelaRamka.style.display = "none"; 
+                }
+            }
+        });
+    });
+});
+</script>  
+</body>
+</html>
