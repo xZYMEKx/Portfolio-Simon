@@ -1,0 +1,270 @@
+
+
+
+*{
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
+    }
+    :root{
+    --background-color: rgb(25, 25, 25);
+    }
+    .neon-text{
+    color: #3a6a78;
+    text-shadow:
+    0 0 5px rgba(74, 140, 152, 0.5),
+    0 0 10px rgba(33, 61, 74, 0.4),
+    0 0 15px rgba(0, 255, 255, 0.15),
+    0 0 20px rgba(0, 255, 255, 0.05);
+    }
+    a{
+    text-decoration: none;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    body{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background-color: #1c313a;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    flex-shrink: 1;
+    z-index: 1;
+    }
+    .Strona {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    width: 100%; 
+    max-width: 100rem; 
+    min-height: 100vh;
+    border-radius: 12.5rem 12.5rem 0 0;
+    background-color: var(--background-color);
+    flex-shrink: 1;
+    z-index: 1;
+    }
+    .widok{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+    
+    .header-fit{
+    display: flex;
+    align-content: start;
+    overflow: hidden;
+    height: 15vh;
+    width: 86%;
+    }
+    .header{
+    display: flex;
+    flex: row;
+    justify-content: space-between; 
+    align-items: start;
+    width: 100%;
+    height: 4.6vh;
+    margin-top: 10.37vh;
+    }
+    .Logo{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    max-width: 48rem;
+    overflow: hidden;
+    }
+    .Logo-tresc{
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    }
+    .Nawigacja{
+    width: 100%;
+    max-width: 38rem; 
+    display: flex; 
+    align-items: center; 
+    overflow: hidden;
+    flex-direction: column; 
+    row-gap: 12rem;
+    margin-top: 0.3125rem;
+    }
+    .nav-links{
+    list-style-type: none;
+    display: flex;
+    gap: 2rem; 
+    }
+    .nav-links a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    font-size: 1.875rem;
+    transition: color 0.3s ease;
+    }
+    .nav-links a:hover{
+    color: #1a536b;
+    }
+    
+
+
+
+    
+    
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    .projekty-fit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 2vh;
+    height: 85vh;
+    width: 100%;
+    }
+    .wzor{
+    display: flex;
+    flex-direction: column;
+    height: calc(66vh + 1rem);
+    width: calc(70vw + 2rem);
+    margin-top: calc(7.5vh + 0.5rem);
+    }
+    .services-div-1{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: calc(calc(25.5vh + 1rem) + 7.5vh);
+    width: calc(70vw + 2rem);
+    z-index: 1;
+    }
+    .services-div-2{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: calc(calc(25.5vh + 1rem) + 7.5vh);
+    width: calc(70vw + 2rem);
+    z-index: 1;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: transparent;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    background: #191c29;
+    width: 19.5vw;
+    height: 25.5vh;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    }
+    .card::before {
+    content: "";
+    position: absolute;
+    width:  calc(100% + 1rem);
+    height: calc(100% + 1rem);
+    background-image: linear-gradient(var(--rotate)
+    , #186479, #1d3848 43%, #133866);
+    animation: spin 3s linear infinite;
+    border-radius: 0.5rem;
+    z-index: -1;
+    }
+    .card::after {
+    content: "";
+    position: absolute;
+    transform: scale(0.6);
+    filter: blur(120px);
+    background-image: linear-gradient(var(--rotate)
+    , #157792, #22455a 43%, #214674);
+    animation: spin 3s linear infinite;
+    margin: 0 auto;
+    transition: opacity .5s;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    z-index: -1;
+    }
+    .card:hover {
+    color: rgb(255, 255, 255);
+    transition: color 1s;
+    bottom: 20px;
+    }
+    .card:hover:after {
+    animation: none;
+    opacity: 0;
+    }
+    @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+    }
+    @keyframes spin {
+    0% {--rotate: 0deg;}
+    100% {--rotate: 360deg;}
+    }
+    
+    
+    
+    
