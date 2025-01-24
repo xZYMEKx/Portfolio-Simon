@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Album Zdjęciowy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="album.css">
+</head>
+<body>
+
+
+
+
+      <div class="przyciski-fit">
+        <div class="przyciski">
+          <input type="button" value="Poprzednie" title="poprzednie" onClick="Wstecz()" class="przycisk-style">
+          <input type="button" value="Nastepne" title="następne" onClick="Nastepne()" class="przycisk-style">
+        </div>
+      </div>
+
+
+
+        
+      <div class="zdjecia-fit">
+
+        <a href="/1.Biografia/2.Projekty.html">
+        <div class="margines" id="div1-1">
+          <div class="margines-style" id="div3-1">
+            <p>POWRÓT</p>
+          </div>
+        </div>
+        </a>
+
+        <div class="zdjecia" id="div2">
+          <img src="1.jpg" name="zdjecie" class="zdjecie-style">
+        </div>
+
+        <a href="/1.Biografia/2.Projekty.html">
+        <div class="margines" id="div1-2">
+          <div class="margines-style" id="div3-2">
+            <p>POWRÓT</p>
+          </div>
+        </div>
+        </a>
+
+      </div>
+
+
+
+
+
+
+
+
+
+      <script>
+        var Zdjecia = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg'];
+        var licz = 0;
+        
+        function Wstecz() {
+            if (licz > 0) {
+                licz--;
+            } else {
+                licz = Zdjecia.length - 1; // Loop back to the last image
+            }
+            document.zdjecie.src = Zdjecia[licz];
+        }
+        
+        function Nastepne() {
+            if (licz < Zdjecia.length - 1) {
+                licz++;
+            } else {
+                licz = 0; // Loop back to the first image
+            }
+            document.zdjecie.src = Zdjecia[licz];
+        }
+        
+        function syncHeights() {
+            const div1_1 = document.getElementById('div1-1');
+            const div1_2 = document.getElementById('div1-2');
+            const div2 = document.getElementById('div2');
+        
+            const div2Height = div2.offsetHeight; // Get the height of div2
+        
+            // Set both div1-1 and div1-2 to match the height of div2
+            div1_1.style.height = div2Height + 'px';
+            div1_2.style.height = div2Height + 'px';
+        }
+        
+        function adjustDiv3Heights() {
+            const div1_1 = document.getElementById('div1-1');
+            const div1_2 = document.getElementById('div1-2');
+            const div3_1 = document.getElementById('div3-1');
+            const div3_2 = document.getElementById('div3-2');
+        
+            const adjustment = window.innerWidth * 0.02 + 4; // Calculate 2vw + 4px in pixels
+        
+            // Set the height of div3-1 to be 2vw + 4px smaller than div1-1
+            const div1_1Height = div1_1.offsetHeight;
+            div3_1.style.height = (div1_1Height - adjustment) + 'px';
+        
+            // Set the height of div3-2 to be 2vw + 4px smaller than div1-2
+            const div1_2Height = div1_2.offsetHeight;
+            div3_2.style.height = (div1_2Height - adjustment) + 'px';
+        }
+        
+        // Adjust heights on page load and resize
+        window.onload = function () {
+            syncHeights();
+            adjustDiv3Heights();
+        };
+        window.onresize = function () {
+            syncHeights();
+            adjustDiv3Heights();
+        };
+        
+        // Observe changes to div1-1, div1-2, and div2 for real-time updates
+        const observer = new ResizeObserver(() => {
+            syncHeights();
+            adjustDiv3Heights();
+        });
+        observer.observe(document.getElementById('div1-1'));
+        observer.observe(document.getElementById('div1-2'));
+        observer.observe(document.getElementById('div2'));
+        </script>
+</body>
+</html>
