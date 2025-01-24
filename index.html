@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/> 
+<link rel="stylesheet" href="style.css">
+<title>Responsive Navbar</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+    
+    <header class="header-fit">
+
+        <div class="navbar">
+
+
+            <div class="logo">Simon<span class="neon-text">.</span></div>
+            <ul class="links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        
+            <div class="toggle_btn" id="Przycisk-Sekcje">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+
+        </div>
+
+
+        <div class="dropdown_menu">
+            <ul class="dropdown-style">
+            <li><a href="#hero">Home<span class="neon-text">.</span></a></li>
+            <li><a href="#about">About<span class="neon-text">.</span></a></li>
+            <li><a href="#services">Services<span class="neon-text">.</span></a></li>
+            <li><a href="#contact">Contact<span class="neon-text">.</span></a></li>
+            </ul>
+        </div>
+
+    </header>
+
+
+
+
+    <div class="tresc-fit">
+
+        <div class="zdjecie-profile">
+
+            <div class="ramka">
+                <img src="z.Profile.jpg" alt="profilowe" class="zdjęcie">
+            </div>
+            
+        </div>
+
+    </div>
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+<script>
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropDownMenu = document.querySelector('.dropdown_menu')
+
+    toggleBtn.onclick = function(){
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+        const trescElement = document.querySelector('.tresc-fit');
+        if (isOpen) {
+        trescElement.classList.add('tresc-fit-after');
+        } else {
+        trescElement.classList.remove('tresc-fit-after');
+        }
+        const zdjecieElement = document.querySelector('.zdjecie-profile');
+        if (isOpen) {
+        zdjecieElement.classList.add('zdjecie-profile-after');
+        } else {
+        zdjecieElement.classList.remove('zdjecie-profile-after');
+        }
+    }
+
+    
+
+
+</script>
+</body>
+</html>
