@@ -190,8 +190,8 @@
     text-align: center;
     position: relative;
     cursor: pointer;
-    width: calc(85vw - 1rem);
-    height: calc(85vw - 1rem);
+    width: calc(39.5vh - 1rem);
+    height: calc(39.5vh - 1rem);
     border-radius: 42.5vw;
     }
     .ramka::before { /* Ramka */
@@ -225,7 +225,7 @@
     opacity: 0;
     }
     .zdjęcie{
-    max-height: calc(85vw - 1rem);
+    max-height: calc(39.5vh - 1rem);
     border-radius: 18.5rem;
     z-index: 1;
     flex-shrink: 1;
